@@ -1,0 +1,14 @@
+<div class="form">
+  <form action="/new_post" method="post">
+    <label for="title">
+      <h3>Title:</h3>
+    </label>
+    <input type="text" id="title" name="post[title]" size="40" class="rounded"><br>
+    <label for="body">
+      <h3>Body:</h3>
+    </label> 
+    <textarea id="body" name="post[body]" cols="39" rows="10" class="rounded"></textarea><br>
+    <input type="text" id="tags" name="post[tag_tokens]" size="40"><br>
+    <input type="submit" value="post" class="button"> 
+  </form>
+</div>

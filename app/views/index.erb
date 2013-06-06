@@ -1,22 +1,11 @@
-<div class="container">
-  <h1>Welcome to Sinatra!</h1>
-  <br>
-  <h6>GET</h6>
-  <form action='/cool_url' method='GET'>
-    <input type='text' name='user_input'>
-    <input type='radio' name='radio' value='water'>Water<br>
-    <input type='radio' name='radio' value='beer'>Beer<br>
-    <input type='radio' name='radio' value='soda'>Soda<br>
-    <input type="checkbox" name="check"> Cheese<br>
-    <input type='submit'>
-  </form>
-  <br>
-  <br>
-  <h6>POST</h6>
-  <form action='/cool_url' method='POST'>
-    <input type='text' name='text_field'>
-    <textarea name='text_area'> </textarea> 
-    <input type='submit'>
-  </form>
-
-</div>
+<% @posts.each do |post| %>
+  <article>
+    <h2><%= post.title %></h2>
+    <p><%= post.body %></p>
+    <ul class="tags">
+      <% post.tags.each do |tag| %>
+        <li><a href="/tags/<%= tag.id %>"><%= tag.name %></a></li>
+      <% end %>
+    <ul>
+  </article>
+<% end %> 
