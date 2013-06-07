@@ -27,12 +27,29 @@ get '/tags/:id' do
   erb :index 
 end
 
+get '/posts/:id' do
+  post = Post.find(params[:id])
+  erb :_post, locals: { post: post }
+end
+
+get '/posts/edit/:id' do
+  @post = Post.find(params[:id])
+  @tag_data = @post.tags.map(&:to_autocomplete_hash).to_json
+  erb :edit_post
+end
+
 
 get '/tags.json' do
   content_type :json
   matches = Tag.search_for_autocomplete(current_query).map(&:to_autocomplete_hash)
   puts matches
   matches.to_json
+end
+
+delete '/posts/:id' do
+  @post = Post.find(params[:id])
+  @post.destroy
+  redirect '/'
 end
 
 def current_query

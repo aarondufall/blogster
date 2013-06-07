@@ -1,0 +1,17 @@
+  <article>
+    <h2><a href="/posts/<%=post.id %>"><%= post.title %></a></h2>
+    <p><%= post.body %></p>
+    <ul class="tags">
+      <% post.tags.each do |tag| %>
+        <li><a href="/tags/<%= tag.id %>"><%= tag.name %></a></li>
+      <% end %>
+    </ul>
+    <div class="action">
+      <form action="/posts/<%= post.id %>" method="post">
+        <a href="/posts/edit/<%= post.id %>">edit</a> &bull;   
+        <input type="hidden" name="_method" value="delete">  
+        <input type="submit" value=" delete" class="delete">    
+      </form> 
+    </div>
+  </article>
+

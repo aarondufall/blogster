@@ -27,6 +27,13 @@ a {
   color: #444;
 }
 
+
+h2 a{
+  font-family: 'Source Code Pro';
+  text-decoration: none;
+  color: #222;
+}
+
 nav {
   height: 25px;
   border-bottom: 1px solid;
@@ -39,14 +46,12 @@ nav ul li {
 }
 
 #left-column {
-  width: 15%;
+  width: 20%;
   float: left;
-
-
 }
 
 #right-column {
-  width: 80%;
+  width: 75%;
   float: right;
   border-left: 1px solid;
   padding-left: 25px;
@@ -54,16 +59,37 @@ nav ul li {
 
 
 article {
-  padding-bottom: 35px;
+  margin-top: 50px;
+  margin-bottom: 125px;
   clear: both;
 }
 
 
+.action {
+  float: left;
+  font-size: 12px;
+  margin-left: 20px;
+  margin-top: 12px;
+}
+
+.delete {
+  background-color: white;
+  border: none;
+  margin-left: -5px;
+  padding: 0px ;
+  font-family: 'Open Sans';
+  color: #444;
+}
 
 .form {
   width: 65%;
   margin: 0 auto;
  
+}
+
+textarea {
+ font-family: inherit;
+   font-size: inherit;
 }
 
 
@@ -89,13 +115,13 @@ article {
   margin: 0;
   padding:0;
   position:relative;
-  right:20px;
+  right: 20px;
   bottom:-10px;
   list-style:none;
 }
 
 .cloud {
-  right:0;
+  right: 8px;
 }
 
 .tags li, .tags a{
