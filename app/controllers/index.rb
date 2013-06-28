@@ -38,6 +38,13 @@ get '/posts/edit/:id' do
   erb :edit_post
 end
 
+post '/posts/edit/:id' do
+  @post = Post.find(params[:id])
+  @post.update_attributes(params[:post])
+  @post.save
+  redirect to '/'
+end
+
 
 get '/tags.json' do
   content_type :json

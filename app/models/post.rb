@@ -5,6 +5,7 @@ class Post < ActiveRecord::Base
 
 
   def tag_tokens=(tag_ids)
+  	self.tags.delete_all
     self.tags << tag_ids.split(",").map { |id| Tag.find(id.to_i) }
   end
 end
